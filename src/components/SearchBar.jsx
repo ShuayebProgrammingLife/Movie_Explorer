@@ -1,7 +1,7 @@
 export default function SearchBar({ value, onChange, resultCount, busy }) {
   return (
     <div className="mt-4">
-      <div className="flex items-center gap-2.5 rounded-full border border-line bg-panel py-1.5 pl-[18px] pr-2 transition-colors focus-within:border-gold">
+      <div className="flex items-center gap-2.5 rounded-full border border-line bg-panel py-1.5 pl-4.5 pr-2 transition-colors focus-within:border-gold">
         <span aria-hidden="true" className="opacity-70">🔍</span>
 
         <input
