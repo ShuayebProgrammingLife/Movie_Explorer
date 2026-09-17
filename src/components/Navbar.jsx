@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { useWatchlistContext } from "../lib/WatchlistContext.jsx";
+import useWatchlistContext from "../lib/useWatchlistContext.js";
 
 const linkClass = ({ isActive }) =>
   [
@@ -25,8 +25,14 @@ export default function Navbar() {
       </a>
 
       <div className="container-wrap flex h-[68px] items-center justify-between gap-4">
-        <Link to="/" className="flex items-center gap-2" aria-label="MovieExplorer home">
-          <span className="text-xl" aria-hidden="true">🎬</span>
+        <Link
+          to="/"
+          className="flex items-center gap-2"
+          aria-label="MovieExplorer home"
+        >
+          <span className="text-xl" aria-hidden="true">
+            🎬
+          </span>
           <span className="font-display text-xl font-extrabold tracking-tight">
             MovieExplorer
           </span>
@@ -64,7 +70,10 @@ export default function Navbar() {
               </span>
             )}
           </NavLink>
-          <Link to="/movies" className="btn btn-primary btn-sm mt-2 md:ml-2 md:mt-0">
+          <Link
+            to="/movies"
+            className="btn btn-primary btn-sm mt-2 md:ml-2 md:mt-0"
+          >
             Movies
           </Link>
         </nav>

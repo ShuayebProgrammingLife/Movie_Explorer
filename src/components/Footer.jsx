@@ -22,7 +22,7 @@ export default function Footer() {
           <a href="https://www.tvmaze.com/api" target="_blank" rel="noreferrer" className="hover:text-gold">
             TVMaze API
           </a>
-          <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-gold">
+          <a href="https://github.com/ShuayebProgrammingLife" target="_blank" rel="noreferrer" className="hover:text-gold">
             GitHub
           </a>
         </div>

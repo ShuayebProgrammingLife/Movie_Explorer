@@ -7,7 +7,7 @@ import {
   getRating,
   stripHtml,
 } from "../lib/shows.js";
-import { useWatchlistContext } from "../lib/WatchlistContext.jsx";
+import useWatchlistContext from "../lib/useWatchlistContext.js";
 
 const FOCUSABLE =
   'a[href], button:not([disabled]), input, [tabindex]:not([tabindex="-1"])';
@@ -65,7 +65,7 @@ export default function MovieModal({ show, onClose }) {
         first.focus();
       }
     },
-    [onClose]
+    [onClose],
   );
 
   useEffect(() => {
@@ -127,17 +127,24 @@ export default function MovieModal({ show, onClose }) {
         </div>
 
         <div className="p-5 sm:p-6">
-          <h2 id="modal-title" className="mb-4 font-display text-2xl tracking-tight sm:text-3xl">
+          <h2
+            id="modal-title"
+            className="mb-4 font-display text-2xl tracking-tight sm:text-3xl"
+          >
             {data.name}
           </h2>
 
           <dl className="mb-5 grid grid-cols-2 gap-3.5 border-b border-line pb-5 sm:grid-cols-3">
-            <Meta term="Rating">★ {rating !== null ? rating.toFixed(1) : "Not rated"}</Meta>
+            <Meta term="Rating">
+              ★ {rating !== null ? rating.toFixed(1) : "Not rated"}
+            </Meta>
             <Meta term="Premiered">{formatDate(data.premiered)}</Meta>
             {runtime && <Meta term="Runtime">{runtime}</Meta>}
             {data.status && <Meta term="Status">{data.status}</Meta>}
             {(data.network?.name || data.webChannel?.name) && (
-              <Meta term="Network">{data.network?.name ?? data.webChannel?.name}</Meta>
+              <Meta term="Network">
+                {data.network?.name ?? data.webChannel?.name}
+              </Meta>
             )}
             {data.language && <Meta term="Language">{data.language}</Meta>}
           </dl>
@@ -145,7 +152,10 @@ export default function MovieModal({ show, onClose }) {
           {data.genres?.length > 0 && (
             <ul className="mb-5 flex list-none flex-wrap gap-2 p-0">
               {data.genres.map((genre) => (
-                <li key={genre} className="rounded-full bg-panel2 px-3 py-1 text-[0.82rem]">
+                <li
+                  key={genre}
+                  className="rounded-full bg-panel2 px-3 py-1 text-[0.82rem]"
+                >
                   {genre}
                 </li>
               ))}

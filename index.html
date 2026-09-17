@@ -1,15 +1,37 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <title>movie-explorer</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0d13" />
+
+  <title>MovieExplorer — Browse, search and discover shows</title>
+  <meta name="description"
+    content="Search thousands of movies and TV shows, filter by genre, sort by rating, and save your watchlist. Built with React and the TVMaze API." />
+  <link rel="canonical" href="https://movie-explorer.example.com/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="MovieExplorer" />
+  <meta property="og:description" content="Search, filter and save movies and TV shows from the TVMaze database." />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://api.tvmaze.com" />
+  <link rel="dns-prefetch" href="https://static.tvmaze.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <div id="root"></div>
+  <noscript>This application requires JavaScript to run.</noscript>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>

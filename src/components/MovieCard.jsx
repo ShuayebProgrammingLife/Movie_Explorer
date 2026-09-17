@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { getPoster, getRating, getYear } from "../lib/shows.js";
-import { useWatchlistContext } from "../lib/WatchlistContext.jsx";
+import useWatchlistContext from "../lib/useWatchlistContext.js";
 
 function MovieCard({ show, onSelect }) {
   const { has, toggle } = useWatchlistContext();
@@ -55,13 +55,19 @@ function MovieCard({ show, onSelect }) {
       </div>
 
       <div className="flex flex-1 flex-col gap-2 p-4">
-        <h3 title={show.name} className="line-clamp-2-title font-display text-[1.05rem] leading-tight">
+        <h3
+          title={show.name}
+          className="line-clamp-2-title font-display text-[1.05rem] leading-tight"
+        >
           {show.name}
         </h3>
 
         <p className="flex items-center gap-2 text-[0.88rem] text-muted">
           <span>★ {rating !== null ? rating.toFixed(1) : "Not rated"}</span>
-          <span aria-hidden="true" className="h-1 w-1 rounded-full bg-current" />
+          <span
+            aria-hidden="true"
+            className="h-1 w-1 rounded-full bg-current"
+          />
           <span>{year ?? "Year unknown"}</span>
         </p>
 
@@ -71,7 +77,10 @@ function MovieCard({ show, onSelect }) {
           </p>
         )}
 
-        <button className="btn btn-ghost mt-auto" onClick={() => onSelect(show)}>
+        <button
+          className="btn btn-ghost mt-auto"
+          onClick={() => onSelect(show)}
+        >
           See details
         </button>
       </div>
